@@ -1,18 +1,22 @@
 ---
-on: [push, pull_request, workflow_dispatch] # yamllint disable-line rule:truthy
+name: Sync the template repository
+
+on: # yamllint disable-line rule:truthy
+  push:
+    branches:
+    - main
 
 jobs:
-  template-sync:
-    timeout-minutes: 20
-
-    # only runs on main branch
+  sync:
+    # only runs on main branch and only for the template
     if: ${{ github.ref == 'refs/heads/main' && fromJSON(needs.metadata.outputs.repository).is_template }}
 
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2.4.0
-    - uses: ahmadnassri/action-template-repository-sync@v1.6.0
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Sync
+      uses: ahmadnassri/action-template-repository-sync@v1.6.0
       with:
         github-token: ${{ secrets.GH_TOKEN }}
-        dry-run: true
