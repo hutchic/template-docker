@@ -1,4 +1,6 @@
 ---
+dependents:
+- docker-kubectl
 
 files:
 - '!README.md'
