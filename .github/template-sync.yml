@@ -1,6 +1,4 @@
 ---
-additional:
-- generated-docker-*
 
 files:
 - '!README.md'
