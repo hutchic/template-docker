@@ -1,5 +1,5 @@
 ---
-dependents:
+additional:
 - docker-kubectl
 
 files:
@@ -7,3 +7,4 @@ files:
 - '!**/sync.yml'
 - '!Dockerfile'
 - '!.secrets.baseline'
+- '!**/template-sync.yml'
