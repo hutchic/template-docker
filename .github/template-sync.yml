@@ -1,6 +1,6 @@
 ---
 additional:
-- docker-kubectl
+- docker-k8s
 
 files:
 - '!README.md'
