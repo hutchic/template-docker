@@ -1,8 +1,9 @@
+---
 name: Sync Fork
 
-on:
+on: # yamllint disable-line rule:truthy
   schedule:
-    - cron: '0 0 * * *' # every 30 minutes
+  - cron: 0 0 * * *     # every 30 minutes
   workflow_dispatch: # on button click
 
 jobs:
@@ -11,9 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: tgymnich/fork-sync@v1.4
-        with:
-          owner: hutchic
-          base: main
-          head: main
-          pr_title: "chore(sync): sync from upstream fork"
+    - uses: tgymnich/fork-sync@v1.4
+      with:
+        owner: hutchic
+        base: main
+        head: main
+        pr_title: 'chore(sync): sync from upstream fork'
