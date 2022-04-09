@@ -4,8 +4,6 @@ additional:
 
 files:
 - '!README.md'
-- '!**/sync.yml'
-- '!Dockerfile'
 - '!.secrets.baseline'
-- '!**/template-sync.yml'
-- '!.github/workflows/sync.yml'
+- '!.github/template-sync.yml'
+- '!Dockerfile'
