@@ -1,6 +1,6 @@
 ---
 additional:
-- docker-k8s
+- template-dockerhub-release
 
 files:
 - '!README.md'
