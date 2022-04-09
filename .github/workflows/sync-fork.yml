@@ -3,7 +3,7 @@ name: Sync Fork
 
 on: # yamllint disable-line rule:truthy
   schedule:
-  - cron: 0 0 * * *     # every 30 minutes
+  - cron: 0 0 * * 0     # every week
   workflow_dispatch: # on button click
 
 jobs:
@@ -12,9 +12,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: tgymnich/fork-sync@v1.4
+    - uses: tgymnich/fork-sync@v1.6
       with:
         owner: hutchic
         base: main
         head: main
         pr_title: 'chore(sync): sync from upstream fork'
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        personal_token: ${{ secrets.GH_TOKEN }}
+        auto_approve: false
