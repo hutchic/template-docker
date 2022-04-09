@@ -1,7 +1,6 @@
 ---
 additional:
-- template-dockerhub-release
-- bkwholesale/spider
+- spider
 
 files:
 - '!README.md'
