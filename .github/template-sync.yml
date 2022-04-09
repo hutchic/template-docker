@@ -1,6 +1,6 @@
 ---
 additional:
-- docker-kubectl
+- template-dockerhub-release
 
 files:
 - '!README.md'
